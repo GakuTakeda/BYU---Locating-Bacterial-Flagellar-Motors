@@ -1,0 +1,38 @@
+base:
+  seed: 42
+yolo:
+  k_folds: 5
+  seed: 42
+  pretrained_weights: rtdetr-l.pt
+  epochs: 70
+  freeze_backbone_epochs: 20
+  batch_size: 16
+  img_size: 960
+  patience: 10
+  optimizer: AdamW
+  momentum: 0.937
+  lr0: 0.0001
+  lrf: 0.1
+  warmup_epochs: 0
+  dropout: 0.1
+  weight_decay: 0.0005
+  augment: true
+  mosaic: 1.0
+  close_mosaic: 10
+  mixup: 0.4
+  degrees: 45
+  shear: 0
+  perspective: 0.0
+  translate: 0.1
+  scale: 0.25
+  flipud: 0.5
+  fliplr: 0.5
+  cos_lr: false
+  amp: true
+  run_name: yolo11l_train
+  names: ["motor"]
+  nc: 1
+  paths:
+    output_path: output/yolo11l_train
+    yolo_dataset_dir: ../parse_data/yolo_dataset
+    yolo_weights_dir: output/yolo11l_train/yolo_weights

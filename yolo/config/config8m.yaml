@@ -1,0 +1,35 @@
+base:
+  seed: 42
+yolo:
+  seed: 42
+  pretrained_weights: yolov8m.pt
+  epochs: 100
+  freeze_backbone_epochs: 25
+  batch_size: 16
+  img_size: 960
+  patience: 100
+  optimizer: AdamW
+  momentum: 0.937
+  lr0: 0.0003
+  lrf: 0.1
+  warmup_epochs: 3
+  dropout: 0.1
+  weight_decay: 0.0005
+  augment: true
+  mosaic: 0.5
+  close_mosaic: 5
+  mixup: 0.2
+  degrees: 15
+  shear: 0
+  perspective: 0.0
+  translate: 0.05
+  scale: 0.15
+  flipud: 0.5
+  fliplr: 0.5
+  cos_lr: true
+  amp: true
+  run_name: yolov8m_train
+  paths:
+    output_path: output/yolov8m_train
+    yolo_dataset_dir: BYU---Locating-Bacterial-Flagellar-Motors/parse_data/yolo_dataset
+    yolo_weights_dir: output/yolo11l_train/yolo_weights

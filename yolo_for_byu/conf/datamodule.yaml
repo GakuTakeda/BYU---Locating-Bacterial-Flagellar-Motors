@@ -1,0 +1,25 @@
+# hydra ではオブジェクトを「ターゲットクラス」と「引数」で定義するのが定石
+_target_: utils.DataModule
+
+datamodule:                 # ← ラッパを追加
+  _target_: utils.DataModule
+  train_img : "../parse_data_for_byu/dataset/images/train"
+  train_lbl : "../parse_data_for_byu/dataset/labels/train"
+  val_img   : "../parse_data_for_byu/dataset/images/val"
+  val_lbl   : "../parse_data_for_byu/dataset/labels/val"
+
+  img_size  : 640
+  batch_size: 8
+  num_workers: 4
+
+  # ← augment 設定は別 YAML で読ませる
+  mosaic        : 1.0
+  close_mosaic  : 5.0
+  mixup         : 0.2
+  degrees       : 45
+  shear         : 0
+  perspective   : 0
+  translate     : 0.1
+  scale         : 0.25
+  flipud        : 0.5
+  fliplr        : 0.5

@@ -1,7 +1,8 @@
-venv/
+.venv/
 input/
-exp1/output /
-exp2/output / 
-exp3/output /
-exp4/output /
+mlflow /
+mlruns /
 detect /
+**/output/** /
+parse_data /
+parse_data_geo /

@@ -1,0 +1,39 @@
+base:
+  seed: 42
+yolo:
+  seed: 42
+  pretrained_weights: yolo11l.pt
+  epochs: 70
+  freeze_backbone_epochs: 0
+  batch_size: 16
+  img_size: 960
+  patience: 10
+  optimizer: AdamW
+  lr0: 0.0001
+  lrf: 0.1
+  warmup_epochs: 0
+  dropout: 0.15
+  weight_decay: 0.0005
+  augment: true
+  mosaic: 1.0
+  close_mosaic: 10
+  mixup: 0.4
+  degrees: 45
+  shear: 0
+  perspective: 0.0
+  translate: 0.1
+  scale: 0.25
+  flipud: 0.5
+  fliplr: 0.5
+  cos_lr: true
+  amp: true
+  run_name: yolo11l_train
+  paths:
+    output_path: output/yolo11l_train
+    yolo_dataset_dir: BYU---Locating-Bacterial-Flagellar-Motors/parse_data/yolo_dataset
+    yolo_weights_dir: output/yolo11l_train/yolo_weights
+
+backbone:
+  backbone: 'swinv2_small_window8_256'
+  out_indices: [1, 2, 3]
+  pre_trained: true

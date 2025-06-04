@@ -1,0 +1,11 @@
+_target_: utils.CenterDetectModule
+
+model: 
+  _target_: utils.CenterDetectModule
+  lr   : 1e-4
+  wdist: 1.0
+  wobj : 1.0
+  img_size : ${datamodule.img_size}   # 参照も可
+  λ_point : 1.0
+  λ_obj : 1.0 
+  λ_cls : 0.0
